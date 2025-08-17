@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { getEncyclopediaPlantDetails } from '../services/geminiService';
 import { EncyclopediaPlant } from '../types';
 import Spinner from './Spinner';
-import { XCircleIcon, BookOpenIcon } from './icons';
+import { XCircleIcon } from './icons';
 import { useTranslation } from '../contexts/LanguageContext';
+import EmptyEncyclopedia from './EmptyEncyclopedia';
 
 const Encyclopedia: React.FC = () => {
   const { t, language } = useTranslation();
@@ -33,7 +34,7 @@ const Encyclopedia: React.FC = () => {
     if (!plantData) return null;
     return (
       <div className="bg-white p-6 rounded-xl shadow-md mt-6 animate-fade-in">
-        <h3 className="text-2xl font-bold text-emerald-800">{plantData.commonName}</h3>
+        <h3 className="text-2xl font-bold text-teal-800">{plantData.commonName}</h3>
         <p className="italic text-stone-500 mb-4">{plantData.scientificName}</p>
         
         <p className="text-stone-700 mb-4">{plantData.description}</p>
@@ -47,9 +48,9 @@ const Encyclopedia: React.FC = () => {
             </div>
         </div>
         
-        <div className="bg-emerald-100/70 p-3 rounded-lg">
-            <p className="font-semibold text-emerald-900">🤓 {t('encyclopedia.funFact')}:</p>
-            <p className="text-emerald-800 text-sm">{plantData.funFact}</p>
+        <div className="bg-teal-50 p-3 rounded-lg">
+            <p className="font-semibold text-teal-900">🤓 {t('encyclopedia.funFact')}:</p>
+            <p className="text-teal-800 text-sm">{plantData.funFact}</p>
         </div>
       </div>
     );
@@ -58,7 +59,7 @@ const Encyclopedia: React.FC = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-emerald-800">{t('encyclopedia.title')}</h2>
+        <h2 className="text-2xl font-bold text-teal-800">{t('encyclopedia.title')}</h2>
         <p className="text-stone-600">{t('encyclopedia.subtitle')}</p>
       </div>
       
@@ -68,9 +69,9 @@ const Encyclopedia: React.FC = () => {
           value={query} 
           onChange={(e) => setQuery(e.target.value)}
           placeholder={t('encyclopedia.searchPlaceholder')}
-          className="w-full p-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none"
+          className="w-full p-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-teal-500 outline-none"
         />
-        <button type="submit" disabled={isLoading} className="bg-emerald-600 text-white font-bold py-3 px-5 rounded-lg hover:bg-emerald-700 transition disabled:bg-stone-400">
+        <button type="submit" disabled={isLoading} className="bg-teal-600 text-white font-bold py-3 px-5 rounded-lg hover:bg-teal-700 transition disabled:bg-stone-400">
           {isLoading ? '...' : t('common.search')}
         </button>
       </form>
@@ -84,11 +85,7 @@ const Encyclopedia: React.FC = () => {
       {isLoading && <div className="text-center py-8"><Spinner /></div>}
 
       {!isLoading && !plantData && !error && (
-        <div className="text-center py-16 px-4 bg-white rounded-lg shadow-sm border border-dashed border-stone-300">
-          <BookOpenIcon className="w-12 h-12 text-stone-300 mx-auto mb-4" />
-          <h3 className="text-lg font-semibold text-stone-700">{t('encyclopedia.emptyStateTitle')}</h3>
-          <p className="text-stone-500 mt-1">{t('encyclopedia.emptyStateSubtitle')}</p>
-        </div>
+        <EmptyEncyclopedia />
       )}
       
       {renderPlantData()}

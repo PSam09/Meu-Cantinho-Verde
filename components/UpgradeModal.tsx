@@ -18,16 +18,16 @@ const UpgradeModal: React.FC<UpgradeModalProps> = ({ onClose, onUpgrade }) => {
         
         <SparklesIcon className="w-16 h-16 mx-auto text-amber-500" />
         
-        <h2 className="text-2xl font-bold text-emerald-800 mt-4">{t('upgradeModal.title')}</h2>
+        <h2 className="text-2xl font-bold text-teal-800 mt-4">{t('upgradeModal.title')}</h2>
         <p className="text-stone-600 mt-2">{t('upgradeModal.subtitle')}</p>
 
         <ul className="text-left space-y-3 mt-6">
           <li className="flex items-start">
-            <LeafIcon className="w-5 h-5 text-emerald-500 mr-3 mt-1 flex-shrink-0" />
+            <LeafIcon className="w-5 h-5 text-teal-500 mr-3 mt-1 flex-shrink-0" />
             <span><span className="font-semibold">{t('upgradeModal.feature1Title')}</span> {t('upgradeModal.feature1Description')}</span>
           </li>
           <li className="flex items-start">
-            <HeartIcon className="w-5 h-5 text-emerald-500 mr-3 mt-1 flex-shrink-0" />
+            <HeartIcon className="w-5 h-5 text-teal-500 mr-3 mt-1 flex-shrink-0" />
             <span><span className="font-semibold">{t('upgradeModal.feature2Title')}</span> {t('upgradeModal.feature2Description')}</span>
           </li>
         </ul>

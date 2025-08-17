@@ -39,7 +39,7 @@ const PlantDetail: React.FC<PlantDetailProps> = ({ plant, onBack, onUpdatePlant 
           <ArrowLeftIcon className="w-6 h-6 text-stone-700" />
         </button>
         <div>
-            <h2 className="text-2xl font-bold text-emerald-800">{plant.nickname}</h2>
+            <h2 className="text-2xl font-bold text-teal-800">{plant.nickname}</h2>
             <p className="text-stone-600 italic">{plant.commonName}</p>
         </div>
       </div>
@@ -47,7 +47,7 @@ const PlantDetail: React.FC<PlantDetailProps> = ({ plant, onBack, onUpdatePlant 
       <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-6">
         <img className="w-full h-48 object-cover" src={plant.imageBase64} alt={plant.nickname} />
         <div className="p-4">
-            <h3 className="font-bold text-lg mb-2 text-emerald-900">{t('plantDetail.carePlanTitle')}</h3>
+            <h3 className="font-bold text-lg mb-2 text-teal-900">{t('plantDetail.carePlanTitle')}</h3>
             <div className="space-y-3 text-sm">
                 <p><strong>💧 {t('plantDetail.watering')}:</strong> {t('plantDetail.every')} {plant.carePlan.wateringDays} {t('plantDetail.days')}. <span className="text-stone-500">{plant.carePlan.wateringSeasonality}.</span></p>
                 <p><strong>🌱 {t('plantDetail.fertilizing')}:</strong> {t('plantDetail.every')} {plant.carePlan.fertilizingMonths} {t('plantDetail.months')}. <span className="text-stone-500">{plant.carePlan.fertilizingSeasonality}.</span></p>
@@ -59,9 +59,9 @@ const PlantDetail: React.FC<PlantDetailProps> = ({ plant, onBack, onUpdatePlant 
       </div>
       
       <div className="bg-white rounded-xl shadow-lg p-4">
-        <h3 className="font-bold text-lg mb-4 text-emerald-900">{t('plantDetail.growthLogTitle')}</h3>
+        <h3 className="font-bold text-lg mb-4 text-teal-900">{t('plantDetail.growthLogTitle')}</h3>
         <input type="file" accept="image/*" capture="environment" ref={fileInputRef} onChange={handleAddPhoto} className="hidden" />
-        <button onClick={() => fileInputRef.current?.click()} className="w-full bg-emerald-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-emerald-700 transition flex items-center justify-center mb-4">
+        <button onClick={() => fileInputRef.current?.click()} className="w-full bg-teal-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-teal-700 transition flex items-center justify-center mb-4">
             <CameraIcon className="w-5 h-5 mr-2" /> {t('plantDetail.addPhotoButton')}
         </button>
 

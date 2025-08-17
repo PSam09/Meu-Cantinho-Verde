@@ -120,13 +120,13 @@ const AddPlantFlow: React.FC<AddPlantFlowProps> = ({ onPlantAdded, plantCount, u
             <h2 className="text-2xl font-bold mb-2">{t('addPlantFlow.step1.title')}</h2>
             <p className="text-stone-600 mb-6">{t('addPlantFlow.step1.subtitle')}</p>
             <input type="file" accept="image/*" capture="environment" ref={fileInputRef} onChange={handleImageChange} className="hidden" />
-            <button onClick={() => fileInputRef.current?.click()} className="w-full h-48 bg-white border-2 border-dashed border-emerald-400 rounded-xl flex flex-col justify-center items-center text-emerald-600 hover:bg-emerald-50 transition">
+            <button onClick={() => fileInputRef.current?.click()} className="w-full h-48 bg-white border-2 border-dashed border-teal-400 rounded-xl flex flex-col justify-center items-center text-teal-600 hover:bg-teal-50 transition">
               {imageBase64 ? <img src={`data:${imageFile?.type};base64,${imageBase64}`} alt="preview" className="w-full h-full object-cover rounded-xl" /> : <><CameraIcon className="w-12 h-12 mb-2" /><span className="font-semibold">{t('addPlantFlow.step1.uploadButton')}</span></>}
             </button>
             {imageBase64 && (
                 <div className="mt-4 flex space-x-2">
                     <button onClick={resetFlow} className="w-1/3 bg-stone-200 text-stone-700 font-bold py-3 px-4 rounded-lg hover:bg-stone-300 transition">{t('common.change')}</button>
-                    <button onClick={handleIdentify} disabled={isLoading || !imageBase64} className="w-2/3 bg-emerald-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-emerald-700 transition disabled:bg-stone-400 flex items-center justify-center">
+                    <button onClick={handleIdentify} disabled={isLoading || !imageBase64} className="w-2/3 bg-teal-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-teal-700 transition disabled:bg-stone-400 flex items-center justify-center">
                         {isLoading ? <Spinner/> : <><SparklesIcon className="w-5 h-5 mr-2"/> {t('addPlantFlow.step1.identifyButton')}</>}
                     </button>
                 </div>
@@ -143,10 +143,10 @@ const AddPlantFlow: React.FC<AddPlantFlowProps> = ({ onPlantAdded, plantCount, u
               <p className="text-sm italic text-stone-500">{identifiedPlant?.scientificName}</p>
             </div>
             <div className="space-y-4">
-              <input type="text" placeholder={t('addPlantFlow.step2.nicknamePlaceholder')} value={plantDetails.nickname} onChange={(e) => setPlantDetails(prev => ({...prev, nickname: e.target.value}))} className="w-full p-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none" />
-              <input type="text" placeholder={t('addPlantFlow.step2.locationPlaceholder')} value={plantDetails.location} onChange={(e) => setPlantDetails(prev => ({...prev, location: e.target.value}))} className="w-full p-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none" />
+              <input type="text" placeholder={t('addPlantFlow.step2.nicknamePlaceholder')} value={plantDetails.nickname} onChange={(e) => setPlantDetails(prev => ({...prev, nickname: e.target.value}))} className="w-full p-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-teal-500 outline-none" />
+              <input type="text" placeholder={t('addPlantFlow.step2.locationPlaceholder')} value={plantDetails.location} onChange={(e) => setPlantDetails(prev => ({...prev, location: e.target.value}))} className="w-full p-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-teal-500 outline-none" />
             </div>
-            <button onClick={handleGeneratePlan} disabled={isLoading} className="w-full mt-6 bg-emerald-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-emerald-700 transition disabled:bg-stone-400">
+            <button onClick={handleGeneratePlan} disabled={isLoading} className="w-full mt-6 bg-teal-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-teal-700 transition disabled:bg-stone-400">
               {isLoading ? <Spinner/> : t('addPlantFlow.step2.generatePlanButton')}
             </button>
           </div>
@@ -159,19 +159,19 @@ const AddPlantFlow: React.FC<AddPlantFlowProps> = ({ onPlantAdded, plantCount, u
             <div className="bg-white p-4 rounded-lg shadow-sm space-y-3">
               <div className="flex justify-between items-center">
                 <span className="font-semibold text-stone-700">💧 {t('addPlantFlow.step3.watering')}:</span>
-                <span className="font-bold text-lg text-emerald-700">{carePlan?.wateringDays} {t('addPlantFlow.step3.days')}</span>
+                <span className="font-bold text-lg text-teal-700">{carePlan?.wateringDays} {t('addPlantFlow.step3.days')}</span>
               </div>
               <p className="text-xs text-stone-500 -mt-2">{carePlan?.wateringSeasonality}</p>
               <div className="flex justify-between items-center">
                 <span className="font-semibold text-stone-700">🌱 {t('addPlantFlow.step3.fertilizing')}:</span>
-                <span className="font-bold text-lg text-emerald-700">{carePlan?.fertilizingMonths} {t('addPlantFlow.step3.months')}</span>
+                <span className="font-bold text-lg text-teal-700">{carePlan?.fertilizingMonths} {t('addPlantFlow.step3.months')}</span>
               </div>
                <div className="pt-2 border-t">
                 <p className="font-semibold text-stone-700">{t('addPlantFlow.step3.proTip')}:</p>
                 <p className="text-stone-600 text-sm">{carePlan?.tip}</p>
               </div>
             </div>
-            <button onClick={handleAddToGarden} className="w-full mt-6 bg-emerald-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-emerald-700 transition">
+            <button onClick={handleAddToGarden} className="w-full mt-6 bg-teal-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-teal-700 transition">
               {t('addPlantFlow.step3.addToGardenButton')}
             </button>
           </div>

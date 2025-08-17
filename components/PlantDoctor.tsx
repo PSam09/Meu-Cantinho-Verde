@@ -64,11 +64,11 @@ const PlantDoctor: React.FC<PlantDoctorProps> = ({ userPlan, onUpgrade, weatherD
     return (
         <div className="space-y-6 text-center">
             <div>
-                <h2 className="text-2xl font-bold text-emerald-800">{t('plantDoctor.title')}</h2>
+                <h2 className="text-2xl font-bold text-teal-800">{t('plantDoctor.title')}</h2>
                 <p className="text-stone-600">{t('plantDoctor.proFeature')}</p>
             </div>
             <div className="bg-white rounded-lg shadow-sm border border-dashed border-stone-300 p-8">
-                <HeartIcon className="w-16 h-16 text-emerald-500 mx-auto mb-4" />
+                <HeartIcon className="w-16 h-16 text-teal-500 mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-stone-700">{t('plantDoctor.upgradeTitle')}</h3>
                 <p className="text-stone-500 mt-2">{t('plantDoctor.upgradeSubtitle')}</p>
                 <button onClick={onUpgrade} className="mt-6 bg-amber-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-amber-600 transition-colors">
@@ -82,7 +82,7 @@ const PlantDoctor: React.FC<PlantDoctorProps> = ({ userPlan, onUpgrade, weatherD
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-emerald-800">{t('plantDoctor.title')}</h2>
+        <h2 className="text-2xl font-bold text-teal-800">{t('plantDoctor.title')}</h2>
         <p className="text-stone-600">{t('plantDoctor.subtitle')}</p>
       </div>
 
@@ -94,14 +94,14 @@ const PlantDoctor: React.FC<PlantDoctorProps> = ({ userPlan, onUpgrade, weatherD
         </div>}
 
         <input type="file" accept="image/*" capture="environment" ref={fileInputRef} onChange={handleImageChange} className="hidden" />
-        <button onClick={() => fileInputRef.current?.click()} className="w-full h-48 bg-white border-2 border-dashed border-emerald-400 rounded-xl flex flex-col justify-center items-center text-emerald-600 hover:bg-emerald-50 transition mb-4">
+        <button onClick={() => fileInputRef.current?.click()} className="w-full h-48 bg-white border-2 border-dashed border-teal-400 rounded-xl flex flex-col justify-center items-center text-teal-600 hover:bg-teal-50 transition mb-4">
           {imageBase64 ? <img src={`data:${imageFile?.type};base64,${imageBase64}`} alt="preview" className="w-full h-full object-cover rounded-xl" /> : <><CameraIcon className="w-12 h-12 mb-2" /><span className="font-semibold">{t('plantDoctor.uploadButton')}</span></>}
         </button>
 
         {imageBase64 && !diagnosis && (
             <div className="flex space-x-2">
                 <button onClick={reset} className="w-1/3 bg-stone-200 text-stone-700 font-bold py-3 px-4 rounded-lg hover:bg-stone-300 transition">{t('common.cancel')}</button>
-                <button onClick={handleDiagnose} disabled={isLoading || !imageBase64} className="w-2/3 bg-emerald-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-emerald-700 transition disabled:bg-stone-400 flex items-center justify-center">
+                <button onClick={handleDiagnose} disabled={isLoading || !imageBase64} className="w-2/3 bg-teal-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-teal-700 transition disabled:bg-stone-400 flex items-center justify-center">
                     {isLoading ? <Spinner/> : <><SparklesIcon className="w-5 h-5 mr-2"/>{t('plantDoctor.diagnoseButton')}</>}
                 </button>
             </div>
@@ -116,10 +116,10 @@ const PlantDoctor: React.FC<PlantDoctorProps> = ({ userPlan, onUpgrade, weatherD
 
         {diagnosis && (
           <div className="bg-white p-4 rounded-lg mt-4 animate-fade-in">
-            <h3 className="text-xl font-bold text-emerald-800">{t('plantDoctor.diagnosisResult')}</h3>
-            <p className="bg-emerald-100/70 p-3 rounded-md mt-2 text-emerald-900 font-semibold">{diagnosis.diagnosis}</p>
+            <h3 className="text-xl font-bold text-teal-800">{t('plantDoctor.diagnosisResult')}</h3>
+            <p className="bg-teal-50 p-3 rounded-md mt-2 text-teal-900 font-semibold">{diagnosis.diagnosis}</p>
             
-            <h3 className="text-xl font-bold text-emerald-800 mt-4">{t('plantDoctor.treatmentPlan')}</h3>
+            <h3 className="text-xl font-bold text-teal-800 mt-4">{t('plantDoctor.treatmentPlan')}</h3>
             <ul className="list-decimal list-inside space-y-2 mt-2 text-stone-700">
               {diagnosis.treatmentPlan.map((step, index) => (
                 <li key={index} className="p-2 bg-stone-50 rounded">{step}</li>

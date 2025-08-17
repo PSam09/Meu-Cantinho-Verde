@@ -77,11 +77,11 @@ const App: React.FC = () => {
   };
 
   const renderHeader = () => (
-    <header className="p-4 flex items-center justify-between bg-white/80 backdrop-blur-sm sticky top-0 z-10 shadow-sm">
+    <header className="p-4 flex items-center justify-between bg-stone-50/80 backdrop-blur-sm sticky top-0 z-10 shadow-sm">
       <div className="flex items-center space-x-2">
-        <LeafIcon className="w-8 h-8 text-emerald-600" />
+        <LeafIcon className="w-8 h-8 text-teal-600" />
         <div>
-            <h1 className="text-2xl font-bold text-emerald-800 leading-tight">{t('header.title')}</h1>
+            <h1 className="text-2xl font-bold text-teal-800 leading-tight">{t('header.title')}</h1>
             {weatherData && (
                 <div className="flex items-center text-xs text-stone-500">
                     <LocationMarkerIcon className="w-3 h-3 mr-1" />
@@ -126,7 +126,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="bg-emerald-50 min-h-screen font-sans text-stone-800">
+    <div className="bg-stone-50 min-h-screen text-stone-800">
       <div className="max-w-lg mx-auto pb-28">
         {renderHeader()}
         <main className="p-4">

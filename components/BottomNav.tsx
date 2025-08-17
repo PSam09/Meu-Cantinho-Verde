@@ -17,7 +17,7 @@ const NavButton: React.FC<{
 }> = ({ label, icon, isActive, onClick }) => (
   <button
     onClick={onClick}
-    className={`flex flex-col items-center justify-center w-full pt-2 pb-1 transition-colors duration-200 ${isActive ? 'text-emerald-600' : 'text-stone-500 hover:text-emerald-500'}`}
+    className={`flex flex-col items-center justify-center w-full pt-2 pb-1 transition-colors duration-200 ${isActive ? 'text-teal-600' : 'text-stone-500 hover:text-teal-500'}`}
     aria-label={label}
   >
     {icon}
@@ -62,7 +62,7 @@ const BottomNav: React.FC<BottomNavProps> = ({ activeView, setView }) => {
 
         {/* Absolutely positioned central button */}
         <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
-             <button onClick={() => setView('add_plant')} className="bg-emerald-600 text-white rounded-full p-4 shadow-lg hover:bg-emerald-700 transition transform hover:scale-110" aria-label={t('nav.addPlantAriaLabel')}>
+             <button onClick={() => setView('add_plant')} className="bg-teal-600 text-white rounded-full p-4 shadow-lg hover:bg-teal-700 transition transform hover:scale-110" aria-label={t('nav.addPlantAriaLabel')}>
                 <PlusIcon className="w-8 h-8"/>
             </button>
         </div>

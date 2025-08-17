@@ -6,6 +6,7 @@ interface PlantCardProps {
   plant: Plant;
   onSelect: (plant: Plant) => void;
   onWater: (plantId: string) => void;
+  style?: React.CSSProperties;
 }
 
 const getNextWateringDays = (plant: Plant): number => {
@@ -18,7 +19,7 @@ const getNextWateringDays = (plant: Plant): number => {
     return daysUntilNextWatering;
 };
 
-const PlantCard: React.FC<PlantCardProps> = ({ plant, onSelect, onWater }) => {
+const PlantCard: React.FC<PlantCardProps> = ({ plant, onSelect, onWater, style }) => {
     const { t } = useTranslation();
     const daysUntilWatering = getNextWateringDays(plant);
 
@@ -28,20 +29,24 @@ const PlantCard: React.FC<PlantCardProps> = ({ plant, onSelect, onWater }) => {
     };
 
   return (
-    <div onClick={() => onSelect(plant)} className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer group">
+    <div 
+      onClick={() => onSelect(plant)} 
+      className="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer group opacity-0 animate-fade-in-up"
+      style={style}
+    >
       <div className="relative">
         <img className="w-full h-40 object-cover" src={plant.imageBase64} alt={plant.nickname} />
         <div className="absolute top-2 right-2 bg-black/40 text-white text-xs px-2 py-1 rounded-full">{plant.location}</div>
       </div>
       <div className="p-4">
-        <h3 className="text-xl font-bold text-emerald-900">{plant.nickname}</h3>
+        <h3 className="text-xl font-bold text-teal-900">{plant.nickname}</h3>
         <p className="text-sm text-stone-500 italic truncate group-hover:whitespace-normal">{plant.commonName}</p>
         <div className="mt-4 flex items-center justify-between space-x-2">
-            <div className="bg-emerald-100/70 rounded-lg p-3 text-center flex-grow">
-                <p className="text-sm font-semibold text-emerald-800">{t('plantCard.nextWatering')}</p>
-                <p className="text-2xl font-bold text-emerald-600">{daysUntilWatering} {daysUntilWatering === 1 ? t('plantCard.day') : t('plantCard.days')}</p>
+            <div className="bg-teal-50 rounded-lg p-3 text-center flex-grow">
+                <p className="text-sm font-semibold text-teal-800">{t('plantCard.nextWatering')}</p>
+                <p className="text-2xl font-bold text-teal-600">{daysUntilWatering} {daysUntilWatering === 1 ? t('plantCard.day') : t('plantCard.days')}</p>
             </div>
-            <button onClick={handleWaterClick} className="bg-blue-500 hover:bg-blue-600 text-white font-bold p-3 rounded-lg transition-colors h-full flex flex-col items-center justify-center">
+            <button onClick={handleWaterClick} className="bg-teal-100 hover:bg-teal-200 text-teal-700 font-bold p-3 rounded-lg transition-colors h-full flex flex-col items-center justify-center">
                 <span className="text-2xl">💧</span>
                 <span className="text-xs mt-1">{t('plantCard.water')}</span>
             </button>

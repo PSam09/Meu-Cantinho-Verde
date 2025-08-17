@@ -33,7 +33,7 @@ const Community: React.FC = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-emerald-800">{t('community.title')}</h2>
+        <h2 className="text-2xl font-bold text-teal-800">{t('community.title')}</h2>
         <p className="text-stone-600">{t('community.subtitle')}</p>
       </div>
 

@@ -47,7 +47,7 @@ const Achievements: React.FC<AchievementsProps> = ({ plants, onBack }) => {
             <ArrowLeftIcon className="w-6 h-6 text-stone-700" />
             </button>
             <div>
-                <h2 className="text-2xl font-bold text-emerald-800">{t('achievements.title')}</h2>
+                <h2 className="text-2xl font-bold text-teal-800">{t('achievements.title')}</h2>
                 <p className="text-stone-600">{t('achievements.subtitle')}</p>
             </div>
       </div>
@@ -63,8 +63,8 @@ const Achievements: React.FC<AchievementsProps> = ({ plants, onBack }) => {
               <p className="text-sm text-stone-500">{ach.description}</p>
             </div>
             {ach.unlocked && (
-              <div className={`text-4xl p-2 rounded-full ml-auto ${ach.unlocked ? 'bg-amber-400' : ''}`}>
-                 🏆
+              <div className="text-3xl ml-auto">
+                 <span>🏆</span>
               </div>
             )}
           </div>
