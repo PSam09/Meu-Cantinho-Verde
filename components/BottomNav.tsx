@@ -33,13 +33,13 @@ const BottomNav: React.FC<BottomNavProps> = ({ activeView, setView }) => {
       <div className="relative flex justify-around items-center h-16">
         <NavButton
           label={t('nav.garden')}
-          icon={<LeafIcon className="w-6 h-6 mb-1" />}
+          icon={<LeafIcon className="w-8 h-8 mb-1" />}
           isActive={activeView === 'dashboard'}
           onClick={() => setView('dashboard')}
         />
         <NavButton
           label={t('nav.community')}
-          icon={<UsersIcon className="w-6 h-6 mb-1" />}
+          icon={<UsersIcon className="w-8 h-8 mb-1" />}
           isActive={activeView === 'community'}
           onClick={() => setView('community')}
         />
@@ -49,13 +49,13 @@ const BottomNav: React.FC<BottomNavProps> = ({ activeView, setView }) => {
         
         <NavButton
           label={t('nav.encyclopedia')}
-          icon={<BookOpenIcon className="w-6 h-6 mb-1" />}
+          icon={<BookOpenIcon className="w-8 h-8 mb-1" />}
           isActive={activeView === 'encyclopedia'}
           onClick={() => setView('encyclopedia')}
         />
         <NavButton
           label={t('nav.doctor')}
-          icon={<HeartIcon className="w-6 h-6 mb-1" />}
+          icon={<HeartIcon className="w-8 h-8 mb-1" />}
           isActive={activeView === 'plant_doctor'}
           onClick={() => setView('plant_doctor')}
         />
