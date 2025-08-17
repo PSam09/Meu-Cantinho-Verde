@@ -1,0 +1,8 @@
+{
+  "name": "Meu Cantinho Verde",
+  "description": "Sua selva urbana, sob controle. Um assistente pessoal de jardinagem que transforma qualquer pessoa em um 'pai/mãe de planta' de sucesso, oferecendo um guia personalizado e proativo para cada planta da sua casa.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}
